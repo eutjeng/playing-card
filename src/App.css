@@ -1,38 +1,81 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(circle, rgba(98, 161, 107, 1) 0%, rgba(24, 65, 29, 1) 100%);
+}
+
+#root {
+  height: 100vh;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  padding: 20px 5px;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.card-button {
+  width: 100%;
+  height: 100%;
+  z-index: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.suit {
+  display: flex;
+  gap: 5px;
+}
+
+.card {
+  width: 222.783px;
+  aspect-ratio: 222.783 / 323.556;
+  border-radius: 4%;
+  color: black;
+  background-color: white;
+  background: transparent;
+}
+
+svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.card {
+  width: 100%;
+  aspect-ratio: 222.783 / 323.556;
+  transition: opacity 0.5s ease;
+  border-radius: 4%;
+}
+
+.card > button > span {
+  border-radius: 4%;
+}
+
+.card > button {
+  border-radius: 4%;
+}
+
+.shadow {
+  border-radius: 4%;
+
+  transition: box-shadow 0.2s ease;
+}
+
+.shadow.selected {
+  box-shadow: 0px 0px 5px 2px rgb(64, 0, 255) !important;
+}
+
+.shadow.in-enemy {
+  box-shadow: 0px 0px 5px 2px #9f0e03;
+}
+
+.shadow.outside > .card {
+  opacity: 0.1;
+}
+
+.shadow.in-enemy > .card {
+  opacity: 0.6;
 }
